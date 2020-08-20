@@ -1,0 +1,11 @@
+<%= form_for @user, url: {action: "update"} do |f| %>
+  <%= f.label(:username, "User name: ", class: 'form-control') %>
+  <%= f.text_field :username, placeholder: "johnDoe" %>
+  <%= f.label(:email, "Email: ") %>
+  <%= f.email_field :email, placeholder: 'myemail@provider.tld'%>
+  <%= f.label(:password, "Password: ") %>
+  <%= f.password_field :password, placeholder: 'Your password here'%>
+  <%= f.label(:password_confirmation, "Confirm Password") %>
+  <%= f.password_field :password_confirmation, placeholder: 'Please enter your password here again' %>
+  <%= f.submit "Sign Up" %>
+<% end %>
