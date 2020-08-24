@@ -1,4 +1,9 @@
 <%= form_for @user, url: {action: "update"} do |f| %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
   <%= f.label(:username, "User name: ", class: 'form-control') %>
   <%= f.text_field :username, placeholder: "johnDoe" %>
   <%= f.label(:email, "Email: ") %>
