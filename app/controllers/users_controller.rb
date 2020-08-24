@@ -31,13 +31,6 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
-    flash.notice = "User '#{@user.username}' Updated!"
-    redirect_to users_path
-  end
-
   private
 
   def user_params
