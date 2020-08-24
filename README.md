@@ -22,7 +22,6 @@ To get a local copy up and running follow these simple example steps:
 ### Validators
 
 - Rubocop
-- Stickler
 
 ## Authors
 
@@ -43,7 +42,7 @@ To get a local copy up and running follow these simple example steps:
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/e71az/micro-reddit/issues).
+Feel free to check the [issues page](https://github.com/abredi/re-former/issues).
 
 ## Show your support
 
