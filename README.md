@@ -4,7 +4,7 @@
 
 ## Code execution view:
 
-![screenshot](./assets/codess.png)
+![screenshot](./assets/images/console.png)
 
 ## Built With
 
@@ -18,19 +18,6 @@ To get a local copy up and running follow these simple example steps:
 
 - Clone this repository into your local machine.
 - Run the main file by typing this in your command line:
-
-```bash
-  $ rails console
-  $ u = User.new(username: 'Admin', email: 'admin@admin.com', password: '123456') #This is to create a User
-  $ p = Post.new(title:'new title', body: 'New body', user_id: 1) #This is to create a post by a certain user
-  $ c = Comment.new(body: 'New body', user_id: 1,  post_id: 1) #This is to create a comment by the user
-  $ u.save
-  $ p.save
-  $ c.save
-  $ u #To check the user content
-  $ p #To check the post content
-  $ c #To check the comment content
-```
 
 ### Validators
 
