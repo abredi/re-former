@@ -4,7 +4,7 @@
 
 ## Code execution view:
 
-![screenshot](./assets/images/console.png)
+![screenshot](./app/assets/images/form-ui.png)
 
 ## Built With
 
