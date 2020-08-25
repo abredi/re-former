@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav class="bg-gray-800">
   <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
@@ -9,3 +10,57 @@
 </nav>
 
 <%= render partial: "form" %>
+=======
+ <h1> Sign Up Form</h1>
+
+<%= form_for @user, url: {action: "create"} do |f| %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+  <%= f.label(:username, "User name: ") %>
+  <%= f.text_field :username, placeholder: "johnDoe" %>
+  <%= f.label(:email, "Email: ") %>
+  <%= f.email_field :email, placeholder: 'myemail@provider.tld'%>
+  <%= f.label(:password, "Password: ") %>
+  <%= f.password_field :password, placeholder: 'Your password here'%>
+  <%= f.label(:password_confirmation, "Confirm Password") %>
+  <%= f.password_field :password_confirmation, placeholder: 'Please confirm your password here' %>
+  <%= f.submit "Sign Up" %>
+<% end %>
+
+
+<%
+=begin%>
+ <%= form_tag("/users", method: "post") do %>
+<%= label_tag(:email, "Email: ")%>
+<%= text_field_tag(:email) %>
+<%= label_tag(:username, "Username: ")%>
+<%= text_field_tag(:username) %>
+<%= label_tag(:password, "Password: ")%>
+<%= password_field_tag(:password) %>
+<%= label_tag(:password_confirmation, "Confirm Password: ")%>
+<%= password_field_tag(:password_confirmation) %>
+<%= submit_tag("Sign Up") %>
+<% end %>
+<%
+=end%>
+
+ <%
+=begin%>
+ <form action="/users" method="post" accept-charset="UTF-8">
+    <label for="username">Username</label>
+    <input id="username" name="user[username]" type="text">
+    <label for="email">Email</label>
+    <input id="email" name="user[email]" type="email">
+    <label for="password">Password</label>
+    <input id="password" name="user[password]" type="password">
+    <label for="password_confirmation">Confirm Password</label>
+    <input id="password_confirmation" name="user[password_confirmation]" type="password">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <button type='submit'>Sign Up </button>
+ </form>
+<%
+=end%>
+>>>>>>> 766b89c1abcc7cb41cd78a9ac6db9a057d9392c5
