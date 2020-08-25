@@ -19,6 +19,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to new_user_path
+      flash.notice = "User '#{@user.username}' Created!"
+      redirect_to users_path
     else
       render :new
     end
