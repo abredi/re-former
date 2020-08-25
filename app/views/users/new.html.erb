@@ -1,56 +1,11 @@
-<div class="container min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-  <%
-=begin%>
- <h1 class="text-gray-600 text-3xl"> Sign Up Form</h1> 
-<%
-=end%>
-  <%= form_for @user, class: "" do |f| %>
-  <ul>
-    <% @user.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-  <%= f.label :username, "User Name: ", class: "block text-gray-700 mt-4 mb-1" %>
-  <%= f.text_field :username, placeholder: "johnDoe", class: "sappearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" %>
-  <%= f.label(:email, "Email Address: ", class: "block text-gray-700 mt-4 mb-1" ) %>
-  <%= f.email_field :email, placeholder: 'myemail@provider.tld', class: "sappearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" %>
-  <%= f.label :password, "Password: ", class: "block text-gray-700 mt-4 mb-1" %>
-  <%= f.password_field :password, placeholder: 'Your Password', class: "sappearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" %>
-  <%= f.label :password_confirmation, "Confirm Password", class: "block text-gray-700 mt-4 mb-1" %>
-  <%= f.password_field :password_confirmation, placeholder: 'Please Confirm Your Password', class: "sappearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" %>
-  <%= f.submit "Sign Up", class: "mt-4 cursor-pointer relative flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out" %>
-<% end %>
-</div>
+<nav class="bg-gray-800">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center">
+        <h1 class="text-gray-100 text-xl sm:text-2xl md:text-3xl mt-4 flex justify-center"> Create New Account</h1>
+      </div>
+    </div>
+  </div>
+</nav>
 
-<%
-=begin%>
- <%= form_tag("/users", method: "post") do %>
-<%= label_tag(:email, "Email: ")%>
-<%= email_field_tag(:email) %>
-<%= label_tag(:username, "Username: ")%>
-<%= text_field_tag(:username) %>
-<%= label_tag(:password, "Password: ")%>
-<%= password_field_tag(:password) %>
-<%= label_tag(:password_confirmation, "Confirm Password: ")%>
-<%= password_field_tag(:password_confirmation) %>
-<%= submit_tag("Sign Up") %>
-<% end %>  
-<%
-=end%>
-
- <%
-=begin%>
- <form action="/users" method="post" accept-charset="UTF-8">
-    <label for="username">Username</label>
-    <input id="username" name="user[username]" type="text">
-    <label for="email">Email</label>
-    <input id="email" name="user[email]" type="email">
-    <label for="password">Password</label>
-    <input id="password" name="user[password]" type="password">
-    <label for="password_confirmation">Confirm Password</label>
-    <input id="password_confirmation" name="user[password_confirmation]" type="password">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <button type='submit'>Sign Up </button>
- </form> 
-<%
-=end%>
+<%= render partial: "form" %>
