@@ -1,11 +1,11 @@
 <div class="container mx-auto min-h-screen w-1/2 bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
   <% flash.each do |key, value| %>
   <%= content_tag :div, value, class: "bg-gray-700 text-white p-4 #{key}" %>
-<% end %>
+  <% end %>
   <%= form_for @user, html: { class: "w-full" } do |f| %>
   <ul>
     <% @user.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
+    <li><%= error %></li>
     <% end %>
   </ul>
   <%= f.label :username, class: "block text-gray-700 mt-4 mb-1" %>
@@ -17,14 +17,14 @@
   <%= f.label :password_confirmation, "Confirm Password", class: "block text-gray-700 mt-4 mb-1" %>
   <%= f.password_field :password_confirmation, placeholder: 'Please Confirm Your Password', class: "sappearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" %>
   <%= f.submit "Sign Up", class: "mt-4 cursor-pointer relative flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out" %>
-<% end %>
-</div> 
+  <% end %>
+</div>
 
 
 
 <%
 =begin%>
- <%= form_tag users_path do %>
+<%= form_tag users_path do %>
 <%= label_tag :email, 'Email: ' %>
 <%= email_field_tag :email  %>
 <%= label_tag :username, "Username: " %>
@@ -34,24 +34,32 @@
 <%= label_tag :password_confirmation, "Confirm Password: " %>
 <%= password_field_tag :password_confirmation  %>
 <%= submit_tag "Sign Up" %>
-<% end %> 
+<% end %>
 <%
 =end%>
 
 
- <%
+<%
 =begin%>
- <form action="<%= users_path %>" method="post" accept-charset="UTF-8">
+ <form action=users_path method="post" accept-charset="UTF-8" class="p-4">
+  <div>
     <label for="username">Username</label>
-    <input id="username" name="user[username]" type="text">
-    <label for="email">Email</label>
-    <input id="email" name="user[email]" type="email">
+    <input id="username" name="user[username]" type="text" class="my-2 border">
+  </div>
+  <div>
+    <label for="email" class="inline-block">Email</label>
+    <input id="email" name="user[email]" type="email" class="my-2 border">
+  </div>
+  <div>
     <label for="password">Password</label>
-    <input id="password" name="user[password]" type="password">
+    <input id="password" name="user[password]" type="password" class="block my-2 border">
+  </div>
+  <div>
     <label for="password_confirmation">Confirm Password</label>
-    <input id="password_confirmation" name="user[password_confirmation]" type="password">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <button type='submit'>Sign Up </button>
- </form>  
+    <input id="password_confirmation" name="user[password_confirmation]" type="password" class="block my-2 border">
+  </div>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <button type='submit' class="bg-blue-500 px-4 py-2">Sign Up </button>
+</form> 
 <%
 =end%>
