@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       flash.notice = "User '#{@user.username.titleize}' Created!"
       redirect_to new_user_path
     else
-      render :new 
+      render :new
     end
   end
 
