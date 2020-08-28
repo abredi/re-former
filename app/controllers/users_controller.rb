@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    @action = 'Create New'
     @user = User.new
   end
 
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @action = 'Update'
     @user = User.find(params[:id])
   end
 
