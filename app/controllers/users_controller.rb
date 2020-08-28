@@ -25,14 +25,17 @@ class UsersController < ApplicationController
       flash.notice = "User '#{@user.username}' Created!"
       redirect_to new_user_path
     else
-      render :new
+      render :new 
     end
   end
 
   def update
-    @user.update(user_params)
-    flash.notice = "User '#{@user.username}' Updated!"
-    redirect_to users_path
+    if @user.update(user_params)
+      flash.notice = "User '#{@user.username}' Updated!"
+      redirect_to users_path
+    else
+      render :new
+    end
   end
 
   def destroy
