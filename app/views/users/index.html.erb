@@ -1,14 +1,22 @@
-<h1>Hello from home</h1>
-<% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "flash #{key}" %>
-<% end %>
-
-<ul>
+<div class="p-8 flex align-center justify-center">
   <% @users.each do |user| %>
-    <li>
-      <%= link_to user.username, user_path(user), class: 'list' %>
-      <%= user.email %>
-      <%= link_to "edit", edit_user_path(user), class: 'edit' %>
-    </li>
+  <div class="max-w-sm m-4 lg:flex">
+    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+      <div class="mb-2">
+        <div class="text-gray-900 font-bold text-xl mb-2"><%= user.username.capitalize %></div>
+      </div>
+      <div class="flex items-center">
+        <div class="w-10 h-10 rounded-full mr-4 bg-gray-200 flex items-center justify-center " alt="Avatar of Jonathan Reinink"><%= user.username.capitalize.first %></div>
+        <div class="text-sm">
+          <p class="text-gray-900 leading-none"> <%= link_to user.email, "mailto:#{user.email}" %> </p>
+          <p class="text-gray-600"><%= user.updated_at.strftime("%b %e, %Y") %></p>
+        </div>
+      </div>
+      <div class="pt-8 pb-2">
+          <%= link_to "Edit", edit_user_path(user), class:"inline-block text-white bg-green-500 rounded-b-md px-3 py-1 text-sm font-semibold mr-2 mb-2" %>
+          <%= link_to 'Delete', user, method: :delete, data: { confirm: "Are you sure want to delete #{user.username.capitalize}?" }, class: 'inline-block bg-red-600 rounded-b-md px-3 py-1 text-sm font-semibold text-white mr-2 mb-2' %>
+        </div>
+    </div>
+  </div>
   <% end %>
-</ul>
+</div>
