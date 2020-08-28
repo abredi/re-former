@@ -10,8 +10,7 @@ class UsersController < ApplicationController
     @users = User.all.order(:updated_at, :desc).limit(50)
   end
 
-  def show
-  end
+  def show; end
 
   def edit
     @action = 'Update'
