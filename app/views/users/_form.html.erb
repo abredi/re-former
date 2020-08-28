@@ -3,6 +3,7 @@
   <div class="inset-y-0 left-0 flex items-center">
     <h1 class="text-gray-700 text-xl sm:text-2xl md:text-3xl mt-4 flex justify-center"><%= @action %> User</h1>
   </div>
+  
   <%= form_for @user, html: { class: "w-full" } do |f| %>
   <ul>
     <% @user.errors.full_messages.each do |error| %>
@@ -37,7 +38,7 @@
 <%= submit_tag "Sign Up" %>
 <% end %>
 
- <form action=users_path method="post" accept-charset="UTF-8" class="p-4">
+ <form action=<%= users_path %> method="post" accept-charset="UTF-8" class="p-4">
   <div>
     <label for="username">Username</label>
     <input id="username" name="user[username]" type="text" class="my-2 border">

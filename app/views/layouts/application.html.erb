@@ -35,10 +35,10 @@
   </div>
 </nav>
 
-  <% if flash[:notice] %>
+  <% if flash %>
     <div class="px-2 py-4 w-full  text-white <%= class_string('bg-gray-600': flash[:notice], 'bg-red-700': flash[:alert]) %>">
       <p class="notice text-center font-bold"> <%= notice %> </p>
-      </div>
+    </div>
   <% end %>
 
   <%= yield %>
