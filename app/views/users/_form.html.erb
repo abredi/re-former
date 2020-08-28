@@ -1,0 +1,61 @@
+
+<div class="container mx-auto min-h-screen w-1/2 bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+  <div class="inset-y-0 left-0 flex items-center">
+    <h1 class="text-gray-700 text-xl sm:text-2xl md:text-3xl mt-4 flex justify-center"><%= @action %> User</h1>
+  </div>
+  <%= form_for @user, html: { class: "w-full" } do |f| %>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+    <li class="text-red-500"> <%= error %></li>
+    <% end %>
+  </ul>
+  <%= f.label :username, class: "block text-gray-700 mt-4 mb-1" %>
+  <%= f.text_field :username, placeholder: "johnDoe", class: "sappearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" %>
+  <%= f.label :email, "Email Address: ", class: "block text-gray-700 mt-4 mb-1" %>
+  <%= f.email_field :email, placeholder: 'myemail@provider.tld', class: "sappearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" %>
+  <%= f.label :password, "Password: ", class: "block text-gray-700 mt-4 mb-1" %>
+  <%= f.password_field :password, placeholder: 'Your Password', class: "sappearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" %>
+  <%= f.label :password_confirmation, "Confirm Password", class: "block text-gray-700 mt-4 mb-1" %>
+  <%= f.password_field :password_confirmation, placeholder: 'Please Confirm Your Password', class: "sappearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" %>
+  <%= f.submit "Sign Up", class: "mt-4 cursor-pointer relative flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-700 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition duration-150 ease-in-out" %>
+  <% end %>
+</div>
+
+
+
+<%
+=begin%>
+<%= form_tag users_path do %>
+<%= label_tag :email, 'Email: ' %>
+<%= email_field_tag :email  %>
+<%= label_tag :username, "Username: " %>
+<%= text_field_tag :username  %>
+<%= label_tag :password, "Password: " %>
+<%= password_field_tag :password  %>
+<%= label_tag :password_confirmation, "Confirm Password: " %>
+<%= password_field_tag :password_confirmation  %>
+<%= submit_tag "Sign Up" %>
+<% end %>
+
+ <form action=users_path method="post" accept-charset="UTF-8" class="p-4">
+  <div>
+    <label for="username">Username</label>
+    <input id="username" name="user[username]" type="text" class="my-2 border">
+  </div>
+  <div>
+    <label for="email" class="inline-block">Email</label>
+    <input id="email" name="user[email]" type="email" class="my-2 border">
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input id="password" name="user[password]" type="password" class="block my-2 border">
+  </div>
+  <div>
+    <label for="password_confirmation">Confirm Password</label>
+    <input id="password_confirmation" name="user[password_confirmation]" type="password" class="block my-2 border">
+  </div>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <button type='submit' class="bg-blue-500 px-4 py-2">Sign Up </button>
+</form> 
+<%
+=end%>
