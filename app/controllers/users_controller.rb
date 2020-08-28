@@ -7,31 +7,28 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.order(:updated_at, :desc).limit(50)
   end
 
-  def show
-    # @user = User.find(params[:id])
-  end
+  def show; end
 
   def edit
     @action = 'Update'
-    # @user = User.find(params[:id])
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      flash.notice = "User '#{@user.username}' Created!"
+      flash.notice = "User '#{@user.username.titleize}' Created!"
       redirect_to new_user_path
     else
-      render :new 
+      render :new
     end
   end
 
   def update
     if @user.update(user_params)
-      flash.notice = "User '#{@user.username}' Updated!"
+      flash.notice = "User '#{@user.username.titleize}' Updated!"
       redirect_to users_path
     else
       render :new

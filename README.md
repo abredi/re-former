@@ -4,7 +4,9 @@
 
 ## Code execution view:
 
-![screenshot](./app/assets/images/form-ui.png)
+![screenshot](./app/assets/images/screenshot-form.png)
+
+![screenshot](./app/assets/images/screenshot-users.png)
 
 ## Built With
 
@@ -22,6 +24,7 @@ To get a local copy up and running follow these simple example steps:
 ### Validators
 
 - Rubocop
+- Stylint
 
 ## Authors
 
@@ -31,8 +34,8 @@ To get a local copy up and running follow these simple example steps:
 - Linkedin: [@e71az](https://www.linkedin.com/in/e71az/)
 - Twitter: [@e71az](https://twitter.com/e71az)
 
-👤 **Abdulaziz Ali**
-
+👤 **Abdulaziz Ali** 
+- ![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg)
 - Github: [@abredi](https://github.com/abredi)
 - Twitter: [@rediabdulaziz](https://twitter.com/rediabdulaziz)
 - Linkedin: [linkedin](https://www.linkedin.com/in/abdulaziz-ali-98948011a)
