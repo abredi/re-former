@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_post, only: [:show, :update, :edit, :destroy]
+  before_action :find_post, only: %i[show update edit destroy]
 
   def new
     @action = 'Create New'
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash.notice = "User deleted!"
+    flash.notice = 'User deleted'
     redirect_to users_path
   end
 
