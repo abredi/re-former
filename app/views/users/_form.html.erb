@@ -3,10 +3,9 @@
   <div class="inset-y-0 left-0 flex items-center">
     <h1 class="text-gray-700 text-xl sm:text-2xl md:text-3xl mt-4 flex justify-center"><%= @action %> User</h1>
   </div>
-  
-  <%= form_with model: @user, class: "w-full" do |f| %>
+  <%= form_with model: user, local: true, class: "w-full" do |f| %>
   <ul>
-    <% @user.errors.full_messages.each do |error| %>
+    <% user.errors.full_messages.each do |error| %>
     <li class="text-red-500"> <%= error %></li>
     <% end %>
   </ul>
