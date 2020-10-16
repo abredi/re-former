@@ -1,6 +1,6 @@
 # Re-Former project
 
-> In this project we created the model and forms of our rails webpage using active records commands.
+In this project, we created the model and web forms using ruby on rails helpers and active records command. This project gave us a chance to build web forms, both using nearly-pure HTML and then helper methods that Rails provide.
 
 ## Code execution view:
 
